@@ -45,7 +45,7 @@
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanel.Location = new System.Drawing.Point(0, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(1735, 234);
+            this.upperPanel.Size = new System.Drawing.Size(1735, 228);
             this.upperPanel.TabIndex = 0;
             // 
             // label2
@@ -83,9 +83,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 234);
+            this.panel1.Location = new System.Drawing.Point(0, 228);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1735, 16);
+            this.panel1.Size = new System.Drawing.Size(1735, 22);
             this.panel1.TabIndex = 1;
             // 
             // Form1

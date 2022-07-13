@@ -8,6 +8,8 @@ namespace PasswordGenerator.NET
     {
         private Main main;
 
+        Timer timer = new Timer();
+
         public Form1()
         {
             InitializeComponent();
@@ -20,7 +22,6 @@ namespace PasswordGenerator.NET
             main = new Main();
 
             //load main window after a delay
-            Timer timer = new Timer();
             timer.Tick += new EventHandler(loadMain);
             timer.Interval = 3000;
             timer.Start();
@@ -28,9 +29,9 @@ namespace PasswordGenerator.NET
 
         private void loadMain(object sender, EventArgs e)
         {
-            
             main.Show();
             this.Hide();
+            timer.Stop();
         }
     }
 }
