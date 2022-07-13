@@ -40,6 +40,8 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -111,6 +113,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.checkBox2);
+            this.splitContainer1.Panel1.Controls.Add(this.checkBox1);
             this.splitContainer1.Panel1.Controls.Add(this.radioButton4);
             this.splitContainer1.Panel1.Controls.Add(this.radioButton3);
             this.splitContainer1.Panel1.Controls.Add(this.radioButton2);
@@ -161,7 +165,7 @@
             this.radioButton3.Size = new System.Drawing.Size(459, 30);
             this.radioButton3.TabIndex = 2;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "lowercase buttons";
+            this.radioButton3.Text = "lowercase letters only";
             this.radioButton3.UseVisualStyleBackColor = false;
             // 
             // radioButton4
@@ -176,8 +180,34 @@
             this.radioButton4.Size = new System.Drawing.Size(459, 30);
             this.radioButton4.TabIndex = 3;
             this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "radioButton4";
+            this.radioButton4.Text = "no letters";
             this.radioButton4.UseVisualStyleBackColor = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.checkBox1.Location = new System.Drawing.Point(0, 120);
+            this.checkBox1.MaximumSize = new System.Drawing.Size(0, 30);
+            this.checkBox1.MinimumSize = new System.Drawing.Size(0, 30);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(459, 30);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "numbers";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.checkBox2.Location = new System.Drawing.Point(0, 150);
+            this.checkBox2.MaximumSize = new System.Drawing.Size(0, 30);
+            this.checkBox2.MinimumSize = new System.Drawing.Size(0, 30);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(459, 30);
+            this.checkBox2.TabIndex = 5;
+            this.checkBox2.Text = "special characters";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -213,5 +243,7 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

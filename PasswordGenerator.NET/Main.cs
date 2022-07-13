@@ -19,13 +19,13 @@ namespace PasswordGenerator.NET
 
         private void generatePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            generate();
         }
 
 
         private void generate()
         {
-            generate();
+            
         }
 
         private void generateMultiple()
