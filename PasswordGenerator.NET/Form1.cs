@@ -15,7 +15,7 @@ namespace PasswordGenerator.NET
             MoveWindow moveWindow1 = new MoveWindow(this, label1);
             MoveWindow moveWindow2 = new MoveWindow(this, label2);
             MoveWindow moveWindow3 = new MoveWindow(this, label3);
-
+              
             //create main form
             main = new Main();
 
