@@ -16,5 +16,31 @@ namespace PasswordGenerator.NET
         {
             InitializeComponent();
         }
+
+        private void generatePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void generate()
+        {
+            generate();
+        }
+
+        private void generateMultiple()
+        {
+
+        }
+
+        private void generateMultiplePasswordsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            generateMultiple();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
