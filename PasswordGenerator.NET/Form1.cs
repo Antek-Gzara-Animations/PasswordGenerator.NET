@@ -33,6 +33,9 @@ namespace PasswordGenerator.NET
             timer2.Tick += new EventHandler(Tick);
             timer2.Interval = 300;
             timer2.Start();
+
+            //add new button event listener
+            main.newToolStripMenuItem.Click += new EventHandler(NewWindow);
         }
 
         private void loadMain(object sender, EventArgs e)
@@ -56,6 +59,15 @@ namespace PasswordGenerator.NET
             if(timerTick > 3){ timerTick = 0; }
 
             label3.Text = output;
+        }
+
+        private void NewWindow(object sender, EventArgs e)
+        {
+            main = new Main();
+            main.newToolStripMenuItem.Click += new EventHandler(NewWindow);
+            main.FormClosed += new FormClosedEventHandler(mainClosed);
+            main.Show();
+
         }
 
         private void mainClosed(object sender, FormClosedEventArgs e) { Close(); }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,19 +37,30 @@
             this.newPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateMultiplePasswordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.lengthInput = new System.Windows.Forms.NumericUpDown();
+            this.specialCheckbox = new System.Windows.Forms.CheckBox();
+            this.numbersCheckbox = new System.Windows.Forms.CheckBox();
+            this.letterRadio4 = new System.Windows.Forms.RadioButton();
+            this.letterRadio3 = new System.Windows.Forms.RadioButton();
+            this.letterRadio2 = new System.Windows.Forms.RadioButton();
+            this.letterRadio1 = new System.Windows.Forms.RadioButton();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.logo1 = new System.Windows.Forms.Panel();
+            this.GeneratePassword = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lengthInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -61,7 +73,7 @@
             this.generateToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1491, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1491, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,13 +89,13 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 34);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.newToolStripMenuItem.Text = "new";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.exitToolStripMenuItem.Text = "exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -113,144 +125,203 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 35);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 33);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.GeneratePassword);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.numericUpDown1);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.checkBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.radioButton4);
-            this.splitContainer1.Panel1.Controls.Add(this.radioButton3);
-            this.splitContainer1.Panel1.Controls.Add(this.radioButton2);
-            this.splitContainer1.Panel1.Controls.Add(this.radioButton1);
-            this.splitContainer1.Size = new System.Drawing.Size(1491, 774);
-            this.splitContainer1.SplitterDistance = 688;
+            this.splitContainer1.Panel1.Controls.Add(this.lengthInput);
+            this.splitContainer1.Panel1.Controls.Add(this.specialCheckbox);
+            this.splitContainer1.Panel1.Controls.Add(this.numbersCheckbox);
+            this.splitContainer1.Panel1.Controls.Add(this.letterRadio4);
+            this.splitContainer1.Panel1.Controls.Add(this.letterRadio3);
+            this.splitContainer1.Panel1.Controls.Add(this.letterRadio2);
+            this.splitContainer1.Panel1.Controls.Add(this.letterRadio1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(1491, 776);
+            this.splitContainer1.SplitterDistance = 687;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.checkBox2.Location = new System.Drawing.Point(0, 230);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBox2.MaximumSize = new System.Drawing.Size(0, 46);
-            this.checkBox2.MinimumSize = new System.Drawing.Size(0, 46);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.checkBox2.Size = new System.Drawing.Size(688, 46);
-            this.checkBox2.TabIndex = 5;
-            this.checkBox2.Text = "special characters";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.checkBox1.Location = new System.Drawing.Point(0, 184);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.checkBox1.MaximumSize = new System.Drawing.Size(0, 46);
-            this.checkBox1.MinimumSize = new System.Drawing.Size(0, 46);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.checkBox1.Size = new System.Drawing.Size(688, 46);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "numbers";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.BackColor = System.Drawing.SystemColors.Control;
-            this.radioButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButton4.Location = new System.Drawing.Point(0, 138);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton4.MaximumSize = new System.Drawing.Size(0, 46);
-            this.radioButton4.MinimumSize = new System.Drawing.Size(0, 46);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.radioButton4.Size = new System.Drawing.Size(688, 46);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Tag = "";
-            this.radioButton4.Text = "no letters";
-            this.radioButton4.UseVisualStyleBackColor = false;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.BackColor = System.Drawing.SystemColors.Control;
-            this.radioButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButton3.Location = new System.Drawing.Point(0, 92);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton3.MaximumSize = new System.Drawing.Size(0, 46);
-            this.radioButton3.MinimumSize = new System.Drawing.Size(0, 46);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.radioButton3.Size = new System.Drawing.Size(688, 46);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "lowercase letters only";
-            this.radioButton3.UseVisualStyleBackColor = false;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.BackColor = System.Drawing.SystemColors.Control;
-            this.radioButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButton2.Location = new System.Drawing.Point(0, 46);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton2.MaximumSize = new System.Drawing.Size(0, 46);
-            this.radioButton2.MinimumSize = new System.Drawing.Size(0, 46);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.radioButton2.Size = new System.Drawing.Size(688, 46);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "uppercase letters only";
-            this.radioButton2.UseVisualStyleBackColor = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.BackColor = System.Drawing.SystemColors.Control;
-            this.radioButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.radioButton1.Location = new System.Drawing.Point(0, 0);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.radioButton1.MaximumSize = new System.Drawing.Size(0, 46);
-            this.radioButton1.MinimumSize = new System.Drawing.Size(0, 46);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.radioButton1.Size = new System.Drawing.Size(688, 46);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "uppercase and lowercase letters";
-            this.radioButton1.UseVisualStyleBackColor = false;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDown1.Location = new System.Drawing.Point(0, 276);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(688, 32);
-            this.numericUpDown1.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 308);
             this.label1.MaximumSize = new System.Drawing.Size(0, 46);
             this.label1.MinimumSize = new System.Drawing.Size(0, 46);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(3, 5, 0, 0);
-            this.label1.Size = new System.Drawing.Size(688, 46);
+            this.label1.Size = new System.Drawing.Size(687, 46);
             this.label1.TabIndex = 7;
             this.label1.Text = "length";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lengthInput
+            // 
+            this.lengthInput.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lengthInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lengthInput.Location = new System.Drawing.Point(0, 276);
+            this.lengthInput.Name = "lengthInput";
+            this.lengthInput.Size = new System.Drawing.Size(687, 32);
+            this.lengthInput.TabIndex = 6;
+            // 
+            // specialCheckbox
+            // 
+            this.specialCheckbox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.specialCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.specialCheckbox.Location = new System.Drawing.Point(0, 230);
+            this.specialCheckbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.specialCheckbox.MaximumSize = new System.Drawing.Size(0, 46);
+            this.specialCheckbox.MinimumSize = new System.Drawing.Size(0, 46);
+            this.specialCheckbox.Name = "specialCheckbox";
+            this.specialCheckbox.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.specialCheckbox.Size = new System.Drawing.Size(687, 46);
+            this.specialCheckbox.TabIndex = 5;
+            this.specialCheckbox.Text = "special characters";
+            this.specialCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // numbersCheckbox
+            // 
+            this.numbersCheckbox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.numbersCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.numbersCheckbox.Location = new System.Drawing.Point(0, 184);
+            this.numbersCheckbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.numbersCheckbox.MaximumSize = new System.Drawing.Size(0, 46);
+            this.numbersCheckbox.MinimumSize = new System.Drawing.Size(0, 46);
+            this.numbersCheckbox.Name = "numbersCheckbox";
+            this.numbersCheckbox.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.numbersCheckbox.Size = new System.Drawing.Size(687, 46);
+            this.numbersCheckbox.TabIndex = 4;
+            this.numbersCheckbox.Text = "numbers";
+            this.numbersCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // letterRadio4
+            // 
+            this.letterRadio4.BackColor = System.Drawing.SystemColors.Control;
+            this.letterRadio4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.letterRadio4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.letterRadio4.Location = new System.Drawing.Point(0, 138);
+            this.letterRadio4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.letterRadio4.MaximumSize = new System.Drawing.Size(0, 46);
+            this.letterRadio4.MinimumSize = new System.Drawing.Size(0, 46);
+            this.letterRadio4.Name = "letterRadio4";
+            this.letterRadio4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.letterRadio4.Size = new System.Drawing.Size(687, 46);
+            this.letterRadio4.TabIndex = 3;
+            this.letterRadio4.Tag = "";
+            this.letterRadio4.Text = "no letters";
+            this.letterRadio4.UseVisualStyleBackColor = false;
+            // 
+            // letterRadio3
+            // 
+            this.letterRadio3.BackColor = System.Drawing.SystemColors.Control;
+            this.letterRadio3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.letterRadio3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.letterRadio3.Location = new System.Drawing.Point(0, 92);
+            this.letterRadio3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.letterRadio3.MaximumSize = new System.Drawing.Size(0, 46);
+            this.letterRadio3.MinimumSize = new System.Drawing.Size(0, 46);
+            this.letterRadio3.Name = "letterRadio3";
+            this.letterRadio3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.letterRadio3.Size = new System.Drawing.Size(687, 46);
+            this.letterRadio3.TabIndex = 2;
+            this.letterRadio3.Text = "lowercase letters only";
+            this.letterRadio3.UseVisualStyleBackColor = false;
+            // 
+            // letterRadio2
+            // 
+            this.letterRadio2.BackColor = System.Drawing.SystemColors.Control;
+            this.letterRadio2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.letterRadio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.letterRadio2.Location = new System.Drawing.Point(0, 46);
+            this.letterRadio2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.letterRadio2.MaximumSize = new System.Drawing.Size(0, 46);
+            this.letterRadio2.MinimumSize = new System.Drawing.Size(0, 46);
+            this.letterRadio2.Name = "letterRadio2";
+            this.letterRadio2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.letterRadio2.Size = new System.Drawing.Size(687, 46);
+            this.letterRadio2.TabIndex = 1;
+            this.letterRadio2.Text = "uppercase letters only";
+            this.letterRadio2.UseVisualStyleBackColor = false;
+            // 
+            // letterRadio1
+            // 
+            this.letterRadio1.BackColor = System.Drawing.SystemColors.Control;
+            this.letterRadio1.Checked = true;
+            this.letterRadio1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.letterRadio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.letterRadio1.Location = new System.Drawing.Point(0, 0);
+            this.letterRadio1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.letterRadio1.MaximumSize = new System.Drawing.Size(0, 46);
+            this.letterRadio1.MinimumSize = new System.Drawing.Size(0, 46);
+            this.letterRadio1.Name = "letterRadio1";
+            this.letterRadio1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.letterRadio1.Size = new System.Drawing.Size(687, 46);
+            this.letterRadio1.TabIndex = 0;
+            this.letterRadio1.TabStop = true;
+            this.letterRadio1.Text = "uppercase and lowercase letters";
+            this.letterRadio1.UseVisualStyleBackColor = false;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Size = new System.Drawing.Size(798, 776);
+            this.splitContainer2.SplitterDistance = 198;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.logo1);
+            this.splitContainer3.Size = new System.Drawing.Size(596, 776);
+            this.splitContainer3.SplitterDistance = 198;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // logo1
+            // 
+            this.logo1.BackColor = System.Drawing.Color.White;
+            this.logo1.BackgroundImage = global::PasswordGenerator.NET.Properties.Resources.password_Generator;
+            this.logo1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.logo1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.logo1.Location = new System.Drawing.Point(0, 0);
+            this.logo1.Name = "logo1";
+            this.logo1.Size = new System.Drawing.Size(198, 286);
+            this.logo1.TabIndex = 1;
+            // 
+            // GeneratePassword
+            // 
+            this.GeneratePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.GeneratePassword.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GeneratePassword.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.GeneratePassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.GeneratePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.GeneratePassword.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GeneratePassword.ForeColor = System.Drawing.Color.White;
+            this.GeneratePassword.Location = new System.Drawing.Point(0, 666);
+            this.GeneratePassword.Name = "GeneratePassword";
+            this.GeneratePassword.Size = new System.Drawing.Size(687, 110);
+            this.GeneratePassword.TabIndex = 8;
+            this.GeneratePassword.Text = "Generate password";
+            this.GeneratePassword.UseVisualStyleBackColor = false;
+            this.GeneratePassword.Click += new System.EventHandler(this.GeneratePassword_Click);
             // 
             // Main
             // 
@@ -259,6 +330,7 @@
             this.ClientSize = new System.Drawing.Size(1491, 809);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(500, 600);
@@ -267,9 +339,16 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lengthInput)).EndInit();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,19 +358,23 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newPasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateMultiplePasswordsToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.RadioButton letterRadio4;
+        private System.Windows.Forms.RadioButton letterRadio3;
+        private System.Windows.Forms.RadioButton letterRadio2;
+        private System.Windows.Forms.RadioButton letterRadio1;
+        private System.Windows.Forms.CheckBox specialCheckbox;
+        private System.Windows.Forms.CheckBox numbersCheckbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown lengthInput;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.Panel logo1;
+        public System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
+        private System.Windows.Forms.Button GeneratePassword;
     }
 }
