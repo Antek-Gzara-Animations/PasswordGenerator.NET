@@ -37,9 +37,9 @@
             this.newPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateMultiplePasswordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.GeneratePassword = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lengthInput = new System.Windows.Forms.NumericUpDown();
-            this.specialCheckbox = new System.Windows.Forms.CheckBox();
             this.numbersCheckbox = new System.Windows.Forms.CheckBox();
             this.letterRadio4 = new System.Windows.Forms.RadioButton();
             this.letterRadio3 = new System.Windows.Forms.RadioButton();
@@ -48,7 +48,8 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.logo1 = new System.Windows.Forms.Panel();
-            this.GeneratePassword = new System.Windows.Forms.Button();
+            this.specialCheckbox = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -89,13 +90,13 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 34);
             this.newToolStripMenuItem.Text = "new";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 34);
             this.exitToolStripMenuItem.Text = "exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -131,10 +132,11 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.GeneratePassword);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.lengthInput);
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.specialCheckbox);
+            this.splitContainer1.Panel1.Controls.Add(this.GeneratePassword);
             this.splitContainer1.Panel1.Controls.Add(this.numbersCheckbox);
             this.splitContainer1.Panel1.Controls.Add(this.letterRadio4);
             this.splitContainer1.Panel1.Controls.Add(this.letterRadio3);
@@ -149,16 +151,33 @@
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
             // 
+            // GeneratePassword
+            // 
+            this.GeneratePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.GeneratePassword.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.GeneratePassword.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.GeneratePassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.GeneratePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.GeneratePassword.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.GeneratePassword.ForeColor = System.Drawing.Color.White;
+            this.GeneratePassword.Location = new System.Drawing.Point(0, 666);
+            this.GeneratePassword.Name = "GeneratePassword";
+            this.GeneratePassword.Size = new System.Drawing.Size(687, 110);
+            this.GeneratePassword.TabIndex = 8;
+            this.GeneratePassword.Text = "Generate password";
+            this.GeneratePassword.UseVisualStyleBackColor = false;
+            this.GeneratePassword.Click += new System.EventHandler(this.GeneratePassword_Click);
+            // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 308);
-            this.label1.MaximumSize = new System.Drawing.Size(0, 46);
-            this.label1.MinimumSize = new System.Drawing.Size(0, 46);
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 333);
+            this.label1.MaximumSize = new System.Drawing.Size(0, 30);
+            this.label1.MinimumSize = new System.Drawing.Size(0, 30);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(3, 5, 0, 0);
-            this.label1.Size = new System.Drawing.Size(687, 46);
+            this.label1.Size = new System.Drawing.Size(687, 30);
             this.label1.TabIndex = 7;
             this.label1.Text = "length";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -167,25 +186,15 @@
             // 
             this.lengthInput.Dock = System.Windows.Forms.DockStyle.Top;
             this.lengthInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lengthInput.Location = new System.Drawing.Point(0, 276);
+            this.lengthInput.Location = new System.Drawing.Point(0, 301);
+            this.lengthInput.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
             this.lengthInput.Name = "lengthInput";
             this.lengthInput.Size = new System.Drawing.Size(687, 32);
             this.lengthInput.TabIndex = 6;
-            // 
-            // specialCheckbox
-            // 
-            this.specialCheckbox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.specialCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.specialCheckbox.Location = new System.Drawing.Point(0, 230);
-            this.specialCheckbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.specialCheckbox.MaximumSize = new System.Drawing.Size(0, 46);
-            this.specialCheckbox.MinimumSize = new System.Drawing.Size(0, 46);
-            this.specialCheckbox.Name = "specialCheckbox";
-            this.specialCheckbox.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.specialCheckbox.Size = new System.Drawing.Size(687, 46);
-            this.specialCheckbox.TabIndex = 5;
-            this.specialCheckbox.Text = "special characters";
-            this.specialCheckbox.UseVisualStyleBackColor = true;
             // 
             // numbersCheckbox
             // 
@@ -306,22 +315,33 @@
             this.logo1.Size = new System.Drawing.Size(198, 286);
             this.logo1.TabIndex = 1;
             // 
-            // GeneratePassword
+            // specialCheckbox
             // 
-            this.GeneratePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.GeneratePassword.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.GeneratePassword.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.GeneratePassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.GeneratePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.GeneratePassword.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.GeneratePassword.ForeColor = System.Drawing.Color.White;
-            this.GeneratePassword.Location = new System.Drawing.Point(0, 666);
-            this.GeneratePassword.Name = "GeneratePassword";
-            this.GeneratePassword.Size = new System.Drawing.Size(687, 110);
-            this.GeneratePassword.TabIndex = 8;
-            this.GeneratePassword.Text = "Generate password";
-            this.GeneratePassword.UseVisualStyleBackColor = false;
-            this.GeneratePassword.Click += new System.EventHandler(this.GeneratePassword_Click);
+            this.specialCheckbox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.specialCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.specialCheckbox.Location = new System.Drawing.Point(0, 230);
+            this.specialCheckbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.specialCheckbox.MaximumSize = new System.Drawing.Size(0, 46);
+            this.specialCheckbox.MinimumSize = new System.Drawing.Size(0, 46);
+            this.specialCheckbox.Name = "specialCheckbox";
+            this.specialCheckbox.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.specialCheckbox.Size = new System.Drawing.Size(687, 46);
+            this.specialCheckbox.TabIndex = 5;
+            this.specialCheckbox.Text = "special characters";
+            this.specialCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Font = new System.Drawing.Font("Lucida Console", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(0, 276);
+            this.button1.MaximumSize = new System.Drawing.Size(0, 25);
+            this.button1.MinimumSize = new System.Drawing.Size(0, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(687, 25);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Edit special characters";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -367,7 +387,6 @@
         private System.Windows.Forms.RadioButton letterRadio3;
         private System.Windows.Forms.RadioButton letterRadio2;
         private System.Windows.Forms.RadioButton letterRadio1;
-        private System.Windows.Forms.CheckBox specialCheckbox;
         private System.Windows.Forms.CheckBox numbersCheckbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown lengthInput;
@@ -376,5 +395,7 @@
         private System.Windows.Forms.Panel logo1;
         public System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.Button GeneratePassword;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox specialCheckbox;
     }
 }
