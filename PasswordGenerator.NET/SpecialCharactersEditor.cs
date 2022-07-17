@@ -75,5 +75,43 @@ namespace PasswordGenerator.NET
                 }
             }
         }
-    }
+        
+        private void changeBackgroundColorOfAllElements(Color color)
+        {
+            for(int i = 0; i < listView1.Items.Count; i++ ){
+                listView1.Items[i].BackColor = color;
+            }
+        }
+
+        private void changeBackgroundColorOfSelectedElements(Color color)
+        {
+            getSelectedItems();
+
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                for (int j = 0; j < selectedElementsList.Count; j++)
+                {
+                    if (i == selectedElementsList[j])
+                    {
+                        listView1.Items[i].BackColor = color;
+                    }
+                }
+            }
+        }
+        private void listView1_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            changeBackgroundColorOfAllElements(Color.White);
+            changeBackgroundColorOfSelectedElements(Color.LightBlue);
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            getSelectedItems();
+                for (int j = 0; j < selectedElementsList.Count; j++)
+                { 
+                        listView1.Items[selectedElementsList[j]].Remove();
+                }
+            
+        }
+    }    
 }
