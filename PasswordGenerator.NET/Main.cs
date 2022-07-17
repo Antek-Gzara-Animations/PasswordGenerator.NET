@@ -157,5 +157,11 @@ namespace PasswordGenerator.NET
 
             return character;
         }
+
+        private void EditSpecialCharactersButton_Click(object sender, EventArgs e)
+        {
+            SpecialCharactersEditor editor = new SpecialCharactersEditor();
+            editor.Show();
+        }
     }
 }

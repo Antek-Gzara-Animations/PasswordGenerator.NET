@@ -28,22 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
-            // treeView1
+            // listView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 12);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(813, 1260);
-            this.treeView1.TabIndex = 0;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(442, 606);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // SpecialCharactersEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1730, 1284);
-            this.Controls.Add(this.treeView1);
+            this.ClientSize = new System.Drawing.Size(762, 630);
+            this.Controls.Add(this.listView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SpecialCharactersEditor";
             this.Text = "SpecialCharactersEditor";
             this.Load += new System.EventHandler(this.SpecialCharactersEditor_Load);
@@ -53,6 +57,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ListView listView1;
     }
 }

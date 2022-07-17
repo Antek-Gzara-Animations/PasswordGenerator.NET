@@ -57,8 +57,10 @@ namespace PasswordGenerator.NET
         {
             for(int i = 0; i < specialCharacters.Count; i++)
             {
-                treeView1.Nodes.Add(specialCharacters[i].ToString());
+                listView1.Items.Add(specialCharacters[i].ToString());
             }
+
+            
         }
     }
 }
