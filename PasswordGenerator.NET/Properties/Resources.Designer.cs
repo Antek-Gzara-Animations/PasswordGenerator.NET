@@ -63,6 +63,16 @@ namespace PasswordGenerator.NET.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checkmark {
+            get {
+                object obj = ResourceManager.GetObject("checkmark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete_button {
             get {
                 object obj = ResourceManager.GetObject("delete-button", resourceCulture);
@@ -96,6 +106,16 @@ namespace PasswordGenerator.NET.Properties {
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap produkt_polski {
+            get {
+                object obj = ResourceManager.GetObject("produkt-polski", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.upperPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.upperPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperPanel
             // 
             this.upperPanel.BackColor = System.Drawing.Color.Transparent;
+            this.upperPanel.Controls.Add(this.panel2);
             this.upperPanel.Controls.Add(this.label3);
             this.upperPanel.Controls.Add(this.label2);
             this.upperPanel.Controls.Add(this.label1);
@@ -47,6 +49,16 @@
             this.upperPanel.Name = "upperPanel";
             this.upperPanel.Size = new System.Drawing.Size(1735, 228);
             this.upperPanel.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1547, 165);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(185, 69);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Loading";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -69,16 +81,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Password Generator";
             // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Javanese Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1547, 165);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 69);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Loading";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gray;
@@ -87,6 +89,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1735, 22);
             this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::PasswordGenerator.NET.Properties.Resources.produkt_polski;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(156, 64);
+            this.panel2.TabIndex = 3;
             // 
             // Form1
             // 
@@ -113,6 +125,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

@@ -35,6 +35,8 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
+            this.DoneButton = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // listView1
@@ -43,6 +45,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(18, 18);
             this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(661, 930);
             this.listView1.TabIndex = 0;
@@ -108,11 +111,33 @@
             this.EditButton.Text = "Edit";
             this.EditButton.UseVisualStyleBackColor = true;
             // 
+            // DoneButton
+            // 
+            this.DoneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DoneButton.Location = new System.Drawing.Point(752, 888);
+            this.DoneButton.Name = "DoneButton";
+            this.DoneButton.Size = new System.Drawing.Size(379, 60);
+            this.DoneButton.TabIndex = 7;
+            this.DoneButton.Text = "Done";
+            this.DoneButton.UseVisualStyleBackColor = true;
+            this.DoneButton.Click += new System.EventHandler(this.DoneButton_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::PasswordGenerator.NET.Properties.Resources.checkmark;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Location = new System.Drawing.Point(686, 888);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(60, 60);
+            this.panel4.TabIndex = 6;
+            // 
             // SpecialCharactersEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1143, 969);
+            this.Controls.Add(this.DoneButton);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.Addbutton);
             this.Controls.Add(this.DeleteButton);
@@ -123,6 +148,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "SpecialCharactersEditor";
             this.Text = "SpecialCharactersEditor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SpecialCharactersEditor_FormClosing);
             this.Load += new System.EventHandler(this.SpecialCharactersEditor_Load);
             this.ResumeLayout(false);
 
@@ -137,5 +163,7 @@
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button Addbutton;
         private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Button DoneButton;
+        private System.Windows.Forms.Panel panel4;
     }
 }

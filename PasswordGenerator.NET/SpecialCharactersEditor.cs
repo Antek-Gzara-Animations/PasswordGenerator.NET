@@ -48,6 +48,8 @@ namespace PasswordGenerator.NET
             '?'
         }.ToList();
 
+        public bool done = false;
+
         private List<int> selectedElementsList = new List<int>();
 
         public SpecialCharactersEditor()
@@ -112,6 +114,19 @@ namespace PasswordGenerator.NET
                         listView1.Items[selectedElementsList[j]].Remove();
                 }
             
+        }
+
+        private void DoneButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void SpecialCharactersEditor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            for(int i = 0; i < listView1.Items.Count; i++)
+            {
+                specialCharacters
+            }
         }
     }    
 }
