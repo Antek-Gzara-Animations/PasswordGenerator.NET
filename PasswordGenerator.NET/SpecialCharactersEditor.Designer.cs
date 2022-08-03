@@ -100,6 +100,7 @@
             this.Addbutton.TabIndex = 4;
             this.Addbutton.Text = "Add";
             this.Addbutton.UseVisualStyleBackColor = true;
+            this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
             // 
             // EditButton
             // 

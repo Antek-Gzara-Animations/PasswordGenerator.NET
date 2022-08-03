@@ -14,6 +14,8 @@ namespace PasswordGenerator.NET
     {
         List<Panel> squareImages = new List<Panel>();
 
+        private List<char> specialCharactersList = new List<char>();
+
         public Main()
         {
             InitializeComponent();

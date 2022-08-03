@@ -125,8 +125,14 @@ namespace PasswordGenerator.NET
         {
             for(int i = 0; i < listView1.Items.Count; i++)
             {
-                specialCharacters
+                specialCharacters.Add(char.Parse(listView1.Items[i].Text));
             }
+        }
+
+        private void Addbutton_Click(object sender, EventArgs e)
+        {
+            AddNewItem addNewItem = new AddNewItem();
+            addNewItem.ShowDialog();
         }
     }    
 }
