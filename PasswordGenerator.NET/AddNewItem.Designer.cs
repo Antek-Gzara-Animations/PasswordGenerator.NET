@@ -30,15 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewItem));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.characterDisplay = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,16 +56,14 @@
             this.panel1.Size = new System.Drawing.Size(800, 53);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // panel4
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(747, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(49, 49);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Location = new System.Drawing.Point(3, 11);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(36, 23);
+            this.panel4.TabIndex = 7;
             // 
             // label1
             // 
@@ -75,6 +74,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Add new Item";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.Location = new System.Drawing.Point(747, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(49, 49);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -93,6 +103,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(66, 26);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -111,6 +122,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "confirm";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
@@ -130,14 +142,14 @@
             this.panel3.Size = new System.Drawing.Size(258, 248);
             this.panel3.TabIndex = 6;
             // 
-            // panel4
+            // characterDisplay
             // 
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Location = new System.Drawing.Point(3, 11);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(36, 23);
-            this.panel4.TabIndex = 7;
+            this.characterDisplay.AutoSize = true;
+            this.characterDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.characterDisplay.Location = new System.Drawing.Point(144, 292);
+            this.characterDisplay.Name = "characterDisplay";
+            this.characterDisplay.Size = new System.Drawing.Size(0, 55);
+            this.characterDisplay.TabIndex = 7;
             // 
             // AddNewItem
             // 
@@ -145,6 +157,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.characterDisplay);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button2);
@@ -154,6 +167,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewItem";
+            this.Opacity = 0D;
             this.Text = "AddNewItem";
             this.Load += new System.EventHandler(this.AddNewItem_Load);
             this.panel1.ResumeLayout(false);
@@ -175,5 +189,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label characterDisplay;
     }
 }

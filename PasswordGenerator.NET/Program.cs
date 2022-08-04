@@ -13,7 +13,7 @@ namespace PasswordGenerator.NET
         /// </summary>
         [STAThread]
         static void Main()
-        {
+      {
             // ***this line is added***
             if (Environment.OSVersion.Version.Major >= 6)
                 SetProcessDPIAware();

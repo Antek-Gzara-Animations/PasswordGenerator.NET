@@ -133,6 +133,8 @@ namespace PasswordGenerator.NET
         {
             AddNewItem addNewItem = new AddNewItem();
             addNewItem.ShowDialog();
+
+
         }
     }    
 }
