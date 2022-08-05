@@ -55,6 +55,8 @@ namespace PasswordGenerator.NET
         private char newItemCharacter = '\0';
         AddNewItem addNewItem;
 
+        EditElement editElement;
+
         public SpecialCharactersEditor()
         {
             InitializeComponent();
@@ -159,6 +161,12 @@ namespace PasswordGenerator.NET
             {
                 listView1.Items.Add(newItemCharacter.ToString());
             }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            editElement = new EditElement();
+            editElement.ShowDialog();
         }
     }    
 }
