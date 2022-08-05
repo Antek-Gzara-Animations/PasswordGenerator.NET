@@ -52,6 +52,9 @@ namespace PasswordGenerator.NET
 
         private List<int> selectedElementsList = new List<int>();
 
+        private char newItemCharacter = '\0';
+        AddNewItem addNewItem;
+
         public SpecialCharactersEditor()
         {
             InitializeComponent();
@@ -131,10 +134,31 @@ namespace PasswordGenerator.NET
 
         private void Addbutton_Click(object sender, EventArgs e)
         {
-            AddNewItem addNewItem = new AddNewItem();
+            addNewItem = new AddNewItem();
+            addNewItem.FormClosing += new FormClosingEventHandler(AddNewItem_FormClosing);
             addNewItem.ShowDialog();
+        }
 
+        private void AddNewItem_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            newItemCharacter = addNewItem.character;
 
+            bool charactersOverlap = false;
+
+            for(int i = 0; i < listView1.Items.Count; i++) 
+            {
+                if (char.Parse(listView1.Items[i].Text) == newItemCharacter)  //comment in memory of my very dumb idea:  if (char.Parse(new string(listView1.Items[i].ToString().ToArray<char>()).Substring(0,0)) == newItemCharacter)
+                {
+                    MessageBox.Show("this item already exists!", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    charactersOverlap = true;
+                    break;
+                }
+            }
+
+            if (charactersOverlap == false)
+            {
+                listView1.Items.Add(newItemCharacter.ToString());
+            }
         }
     }    
 }

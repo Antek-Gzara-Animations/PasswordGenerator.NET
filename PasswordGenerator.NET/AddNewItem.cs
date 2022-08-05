@@ -90,6 +90,11 @@ namespace PasswordGenerator.NET
             if(changed == true)
             {
                 character = char.Parse(textBox1.Text);
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("enter character into textbox or exit without adding item using x in upper right corner of your screen", "please enter character", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
