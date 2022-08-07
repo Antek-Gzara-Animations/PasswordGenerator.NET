@@ -17,7 +17,15 @@ namespace PasswordGenerator.NET
 
         private int animationTick = 0;
 
-        private bool changed = false;
+        public bool changed = false;
+        private bool dataGiven = false;
+
+        private string before;
+        public string after;
+
+
+
+        Timer showingAnimation = new Timer();
 
         public EditElement()
         {
@@ -26,15 +34,32 @@ namespace PasswordGenerator.NET
 
         private void EditElement_Load(object sender, EventArgs e)
         {
+            if(dataGiven == false)
+            {
+                MessageBox.Show("An error occured!\nerror code: HEX45646974456C656D656E742E63735F6C696E6533372D33395F6E6F5F646174615F676976656E21", "unexpected error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                fisrtCharacter.Text = before;
+                label5.Text = before;
+            }
+
             MoveWindow movewindow = new MoveWindow(this, panel1);
             MoveWindow movewindow2 = new MoveWindow(this, label1);
             MoveWindow movewindow3 = new MoveWindow(this, panel4);
 
-            Timer showingAnimation = new Timer();
+           
             showingAnimation.Interval = 1;
             showingAnimation.Tick += new EventHandler(showingAnimationTick);
             showingAnimation.Start();
         }
+
+        public void GiveData(string data)
+        { 
+            before = data;
+            dataGiven = true;
+        }
+
 
         private void showingAnimationTick(object sender, EventArgs e)
         {
@@ -106,6 +131,20 @@ namespace PasswordGenerator.NET
             {
                 Close();
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            after = textBox1.Text;
+            secondCharacter.Text = after;
+            
+
+            changed = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

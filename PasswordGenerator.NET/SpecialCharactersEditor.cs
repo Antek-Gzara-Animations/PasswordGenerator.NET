@@ -52,6 +52,8 @@ namespace PasswordGenerator.NET
 
         private List<int> selectedElementsList = new List<int>();
 
+        public bool changed = false;
+
         private char newItemCharacter = '\0';
         AddNewItem addNewItem;
 
@@ -113,16 +115,26 @@ namespace PasswordGenerator.NET
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+          
             getSelectedItems();
-                for (int j = 0; j < selectedElementsList.Count; j++)
-                { 
-                        listView1.Items[selectedElementsList[j]].Remove();
-                }
+            for (int j = 0; j < selectedElementsList.Count; j++)
+            {
+                listView1.Items[selectedElementsList[j]].Remove();
+            }
+
+            changed = true;
             
         }
 
         private void DoneButton_Click(object sender, EventArgs e)
         {
+            specialCharacters.Clear();
+            
+            for(int i = 0; i < listView1.Items.Count; i++)
+            {
+                specialCharacters.Add(char.Parse(listView1.Items[i].Text));
+            }
+
             Close();
         }
 
@@ -165,8 +177,32 @@ namespace PasswordGenerator.NET
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            editElement = new EditElement();
-            editElement.ShowDialog();
+            if (listView1.SelectedItems.Count > 0 && listView1.SelectedItems.Count <= 1)
+            {
+
+                editElement = new EditElement();
+                editElement.GiveData(listView1.SelectedItems[0].Text);
+                editElement.FormClosing += new FormClosingEventHandler(editElement_FormClosing);
+                editElement.ShowDialog();
+                
+            }
+            else
+            {
+                editElement = null;
+                MessageBox.Show("You need to select element you want to edit first!", "warning!" , MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void editElement_FormClosing(object sender, FormClosingEventArgs e) 
+        {
+            if (editElement.changed)
+            {
+                if (listView1.SelectedItems.Count > 0 && listView1.SelectedItems.Count <= 1)
+                {
+                    listView1.SelectedItems[0].Text = editElement.after;
+                    changed = true;
+                }
+            }
         }
     }    
 }

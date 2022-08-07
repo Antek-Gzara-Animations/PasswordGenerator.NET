@@ -16,6 +16,10 @@ namespace PasswordGenerator.NET
 
         private List<char> specialCharactersList = new List<char>();
 
+        SpecialCharactersEditor editor;
+
+        string generatedPassword = "";
+
         public Main()
         {
             InitializeComponent();
@@ -32,11 +36,13 @@ namespace PasswordGenerator.NET
 
         private void generatePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            generate();
+            generatedPassword = generate();
+
+            MessageBox.Show(generatedPassword);
         }
 
 
-        private void generate()
+        private string generate()
         {
             long length = long.Parse(lengthInput.Value.ToString());
             string outputPassword  = "";
@@ -109,11 +115,16 @@ namespace PasswordGenerator.NET
                     }
                     
                 }
+
+                return outputPassword;
+
             }
             else
             {
                 MessageBox.Show("sorry, maximum length is 1000", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            //return "error";
         }
 
         private void generateMultiple()
@@ -141,7 +152,7 @@ namespace PasswordGenerator.NET
 
         private void GeneratePassword_Click(object sender, EventArgs e)
         {
-            generate();
+            generateMultiplePasswordsToolStripMenuItem_Click((object)sender, new EventArgs());
         }
 
         private char randomAlphabet()
@@ -157,13 +168,26 @@ namespace PasswordGenerator.NET
         {
             char character = '\0';
 
+            character = specialCharactersList[new Random().Next(0, specialCharactersList.Count)];
+
+
             return character;
         }
 
         private void EditSpecialCharactersButton_Click(object sender, EventArgs e)
         {
-            SpecialCharactersEditor editor = new SpecialCharactersEditor();
-            editor.Show();
+            editor = new SpecialCharactersEditor();
+            editor.FormClosing += new FormClosingEventHandler(SpecialCharactersEditor_formCosing);
+            editor.ShowDialog();
+        }
+
+        private void SpecialCharactersEditor_formCosing(object sender, FormClosingEventArgs e) 
+        {
+            specialCharactersList.Clear();
+            for(int i = 0; i < editor.specialCharacters.Count; i++)
+            {
+                specialCharactersList.Add(editor.specialCharacters[i]);
+            }
         }
     }
 }
