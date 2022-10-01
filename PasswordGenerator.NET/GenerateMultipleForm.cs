@@ -10,24 +10,23 @@ using System.Windows.Forms;
 
 namespace PasswordGenerator.NET
 {
-    public partial class AddNewItem : Form
+    public partial class GenerateMultipleForm : Form
     {
-        public AddNewItem()
+        public GenerateMultipleForm()
         {
             InitializeComponent();
         }
 
         private int animationTick = 0;
 
-        private bool changed = false;
+        public int number = 0;
 
-        public char character = '\0';
+        bool changed = false;
 
-        private void AddNewItem_Load(object sender, EventArgs e)
+        private void GenerateMultipleForm_Load(object sender, EventArgs e)
         {
             MoveWindow movewindow = new MoveWindow(this, panel1);
             MoveWindow movewindow2 = new MoveWindow(this, label1);
-            MoveWindow movewindow3 = new MoveWindow(this, panel4);
 
             Timer showingAnimation = new Timer();
             showingAnimation.Interval = 1;
@@ -35,22 +34,18 @@ namespace PasswordGenerator.NET
             showingAnimation.Start();
         }
 
-        private void showingAnimationTick(object sender, EventArgs e) 
+        private void showingAnimationTick(object sender, EventArgs e)
         {
-            if(animationTick == 0)
+            if (animationTick == 0)
             {
                 this.Opacity = 0;
             }
 
-            if(animationTick <= 11)
+            if (animationTick <= 11)
             {
                 this.Opacity += 0.2;
                 animationTick += 2;
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -58,7 +53,7 @@ namespace PasswordGenerator.NET
         {
             if (changed == true)
             {
-                DialogResult result = MessageBox.Show("do you want to exit without saving changes?", "abort adding new item", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("do you want to exit without saving changes?", "abort", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes)
                 {
@@ -79,38 +74,22 @@ namespace PasswordGenerator.NET
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            changed = true;
-            characterDisplay.Text = textBox1.Text;
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            if(changed == true)
+            if (changed == true)
             {
-                character = char.Parse(textBox1.Text);
+                number = int.Parse(numericUpDown1.Value.ToString());
                 Close();
             }
             else
             {
-                MessageBox.Show("enter character into textbox or exit without adding item using x in upper right corner of your screen", "please enter character", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("enter number into input area or exit without saveing changes using X in upper right corner of your screen", "please enter number", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
+            changed = true;
         }
     }
 }
