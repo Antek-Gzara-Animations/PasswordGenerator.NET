@@ -307,5 +307,10 @@ namespace PasswordGenerator.NET
                 specialCharactersList.Add(editor.specialCharacters[i]);
             }
         }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
