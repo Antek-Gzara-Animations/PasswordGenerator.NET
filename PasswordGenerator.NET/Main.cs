@@ -18,9 +18,21 @@ namespace PasswordGenerator.NET
 
         SpecialCharactersEditor editor;
 
+        ResultForm resultForm;
+
         GenerateMultipleForm generateMultipleForm;
 
-        string generatedPassword = "";
+        private string generatedPassword = "";
+
+        private int ThreadNumber = 0;
+
+        private bool resultsavailable = false;
+
+        List<string> passwordsList = new List<string>();
+
+        Timer resultsTimer = new Timer();
+
+        private bool loading = false;
 
         public Main()
         {
@@ -39,13 +51,36 @@ namespace PasswordGenerator.NET
             editor.FormClosing += new FormClosingEventHandler(SpecialCharactersEditor_formCosing);
             editor.Show();
             editor.Close();
+
+            Timer loadingLabelTimer = new Timer();
+            loadingLabelTimer.Interval = 100;
+            loadingLabelTimer.Tick += new EventHandler(loadingLabelTimer_Tick);
+            loadingLabelTimer.Start();
+        }
+
+        private void loadingLabelTimer_Tick(object sender, EventArgs e)
+        {
+            if (loading)
+            {
+                loadingLabel.Text = "Loading";
+            }
+            else
+            {
+                loadingLabel.Text = "";
+            }
         }
 
         private void generatePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            loading = true;
             generatedPassword = generate();
+            loading = false;
 
-            MessageBox.Show(generatedPassword);
+            List<string> passwords = new List<string> { generatedPassword };
+
+            resultForm = new ResultForm();
+            resultForm.showResult(passwords);
+            resultForm.Show();
         }
 
 
@@ -58,8 +93,8 @@ namespace PasswordGenerator.NET
 
             List<int> actions = new List<int>();
 
-            progressBar1.Value = 0;
-            progressBar1.Maximum = length;
+            progressBar1.Invoke(new Action(() => progressBar1.Value = 0));
+            progressBar1.Invoke(new Action(() => progressBar1.Maximum = length));
             
 
 
@@ -143,7 +178,7 @@ namespace PasswordGenerator.NET
                     }
 
                     //Console.WriteLine(i);
-                    progressBar1.PerformStep();
+                    progressBar1.Invoke(new Action(() => progressBar1.PerformStep()));
                     
                 }
 
@@ -173,14 +208,45 @@ namespace PasswordGenerator.NET
 
             List<string> passwords = new List<string>();
 
-            for (int i = 0; i < number; i++)
-            {
-                passwords.Add(generate());
-            }
 
-            for (int i = 0; i < passwords.Count; i++)
+
+            if (ThreadNumber == 0) { System.Threading.Thread.CurrentThread.Name = ThreadNumber.ToString(); }
+
+            ThreadNumber++;
+
+            Task task = new Task(() =>
             {
-                Console.WriteLine(passwords[i]);
+                loading = true;
+
+                for (int i = 0; i < number; i++)
+                {
+                    passwords.Add(generate());
+                }
+                passwordsList = passwords;
+                resultsavailable = true;
+                loading = false;
+            });
+
+            task.Start();
+
+            resultsTimer = new Timer();
+            resultsTimer.Interval = 10;
+            resultsTimer.Tick += new EventHandler(initializeShowResult);
+            resultsTimer.Start();
+        }
+
+        private void initializeShowResult(object sender, EventArgs e)
+        {
+            if (resultsavailable == true)
+            {
+                resultsavailable = false;
+
+                resultsTimer.Stop();
+
+                resultForm = new ResultForm();
+                resultForm.showResult(passwordsList);
+                Console.WriteLine(passwordsList.ToArray());
+                resultForm.Show();
             }
         }
 

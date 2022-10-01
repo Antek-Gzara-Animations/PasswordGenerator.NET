@@ -37,6 +37,7 @@
             this.newPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateMultiplePasswordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.lengthInput = new System.Windows.Forms.NumericUpDown();
             this.EditSpecialCharactersButton = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.logo1 = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.loadingLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -75,8 +76,7 @@
             this.generateToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1491, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1491, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -86,7 +86,7 @@
             this.newToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(59, 32);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(59, 29);
             this.fileToolStripMenuItem.Text = " File";
             // 
             // newToolStripMenuItem
@@ -108,7 +108,7 @@
             this.newPasswordToolStripMenuItem,
             this.generateMultiplePasswordsToolStripMenuItem});
             this.generateToolStripMenuItem.Name = "generateToolStripMenuItem";
-            this.generateToolStripMenuItem.Size = new System.Drawing.Size(97, 32);
+            this.generateToolStripMenuItem.Size = new System.Drawing.Size(97, 29);
             this.generateToolStripMenuItem.Text = "generate";
             // 
             // newPasswordToolStripMenuItem
@@ -128,12 +128,13 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 36);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 33);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.loadingLabel);
             this.splitContainer1.Panel1.Controls.Add(this.progressBar1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.lengthInput);
@@ -149,10 +150,19 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1491, 773);
+            this.splitContainer1.Size = new System.Drawing.Size(1491, 776);
             this.splitContainer1.SplitterDistance = 687;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(0, 642);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(687, 23);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 9;
             // 
             // label1
             // 
@@ -225,7 +235,7 @@
             this.GeneratePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.GeneratePassword.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GeneratePassword.ForeColor = System.Drawing.Color.White;
-            this.GeneratePassword.Location = new System.Drawing.Point(0, 662);
+            this.GeneratePassword.Location = new System.Drawing.Point(0, 665);
             this.GeneratePassword.Name = "GeneratePassword";
             this.GeneratePassword.Size = new System.Drawing.Size(687, 111);
             this.GeneratePassword.TabIndex = 8;
@@ -324,7 +334,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(798, 773);
+            this.splitContainer2.Size = new System.Drawing.Size(798, 776);
             this.splitContainer2.SplitterDistance = 198;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -337,7 +347,7 @@
             // splitContainer3.Panel1
             // 
             this.splitContainer3.Panel1.Controls.Add(this.logo1);
-            this.splitContainer3.Size = new System.Drawing.Size(596, 773);
+            this.splitContainer3.Size = new System.Drawing.Size(596, 776);
             this.splitContainer3.SplitterDistance = 196;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -352,14 +362,14 @@
             this.logo1.Size = new System.Drawing.Size(196, 286);
             this.logo1.TabIndex = 1;
             // 
-            // progressBar1
+            // loadingLabel
             // 
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 639);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(687, 23);
-            this.progressBar1.Step = 1;
-            this.progressBar1.TabIndex = 9;
+            this.loadingLabel.AutoSize = true;
+            this.loadingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.loadingLabel.Location = new System.Drawing.Point(275, 496);
+            this.loadingLabel.Name = "loadingLabel";
+            this.loadingLabel.Size = new System.Drawing.Size(0, 37);
+            this.loadingLabel.TabIndex = 10;
             // 
             // Main
             // 
@@ -377,6 +387,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -416,5 +427,6 @@
         private System.Windows.Forms.Button EditSpecialCharactersButton;
         private System.Windows.Forms.CheckBox specialCheckbox;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label loadingLabel;
     }
 }
